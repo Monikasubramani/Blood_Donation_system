@@ -9,21 +9,15 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Install') {
             steps {
-                echo 'No build needed'
+                bat 'npm install'
             }
         }
 
-        stage('Deploy') {
+        stage('Run App') {
             steps {
-                bat 'echo Deploy step running...'
-            }
-        }
-
-        stage('Run Server') {   // ✅ renamed (no duplicate)
-            steps {
-                bat 'python -m http.server 8000'
+                bat 'npm start'
             }
         }
     }
