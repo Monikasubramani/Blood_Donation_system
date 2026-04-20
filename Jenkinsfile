@@ -2,28 +2,27 @@ pipeline {
     agent any
 
     stages {
-
         stage('Clone') {
             steps {
-                git 'https://github.com/Monikasubramani/Blood_Donation_system.git'
+                git 'https://github.com/your-repo/blood-donation-system.git'
             }
         }
 
-        stage('Install') {
+        stage('Build') {
             steps {
-                bat 'npm install'
+                echo 'Building project...'
             }
         }
 
-        stage('Build React App') {
+        stage('Test') {
             steps {
-                bat 'npm run build'
+                echo 'Running tests...'
             }
         }
 
-        stage('Run Server') {
+        stage('Deploy') {
             steps {
-                bat 'node server.js'
+                echo 'Deploying project...'
             }
         }
     }
