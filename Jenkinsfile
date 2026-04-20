@@ -15,14 +15,15 @@ pipeline {
             }
         }
 
-        stage('Run App') {
-            steps {
-                bat 'npm start'
-            }
-        }
-        stage('Build React') {
+        stage('Build React App') {
             steps {
                 bat 'npm run build'
+            }
+        }
+
+        stage('Run Server') {
+            steps {
+                bat 'node server.js'
             }
         }
     }
