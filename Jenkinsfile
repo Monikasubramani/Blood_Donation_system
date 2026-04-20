@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-repo/blood-donation-system.git'
+                git 'https://github.com/Monikasubramani/Blood_Donation_system.git'
             }
         }
 
