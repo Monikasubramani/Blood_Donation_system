@@ -20,5 +20,10 @@ pipeline {
                 bat 'echo Deploy step running...'
             }
         }
+        stage('Deploy') {
+            steps {
+                bat 'xcopy /E /I /Y * C:\\xampp\\htdocs\\bloodapp\\'
+            }
+        }
     }
 }
