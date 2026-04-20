@@ -20,5 +20,10 @@ pipeline {
                 bat 'npm start'
             }
         }
+        stage('Build React') {
+            steps {
+                bat 'npm run build'
+            }
+        }
     }
 }
