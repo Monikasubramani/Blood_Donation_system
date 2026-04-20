@@ -20,9 +20,10 @@ pipeline {
                 bat 'echo Deploy step running...'
             }
         }
-        stage('Deploy') {
+
+        stage('Run Server') {   // ✅ renamed (no duplicate)
             steps {
-                bat 'xcopy /E /I /Y * C:\\xampp\\htdocs\\bloodapp\\'
+                bat 'python -m http.server 8000'
             }
         }
     }
